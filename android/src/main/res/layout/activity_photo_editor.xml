@@ -211,7 +211,7 @@
                     android:textColor="#FFFFFF"
                     android:textSize="15sp"
                     android:visibility="gone" />
-
+Z
                 <TextView
                     android:id="@+id/go_to_next_screen_tv"
                     android:layout_width="wrap_content"

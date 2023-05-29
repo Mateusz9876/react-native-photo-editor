@@ -141,10 +141,7 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
         TextView addPencil = (TextView) findViewById(R.id.add_pencil_tv);
         RelativeLayout deleteRelativeLayout = (RelativeLayout) findViewById(R.id.delete_rl);
         TextView deleteTextView = (TextView) findViewById(R.id.delete_tv);
-        TextView addImageEmojiTextView = (TextView) findViewById(R.id.add_image_emoji_tv);
-        TextView addCropTextView = (TextView) findViewById(R.id.add_crop_tv);
         TextView saveTextView = (TextView) findViewById(R.id.save_tv);
-        TextView saveTextTextView = (TextView) findViewById(R.id.save_text_tv);
         undoTextView = (TextView) findViewById(R.id.undo_tv);
         undoTextTextView = (TextView) findViewById(R.id.undo_text_tv);
         doneDrawingTextView = (TextView) findViewById(R.id.done_drawing_tv);
@@ -167,9 +164,6 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
         closeTextView.setTypeface(newFont);
         addTextView.setTypeface(newFont);
         addPencil.setTypeface(newFont);
-        addImageEmojiTextView.setTypeface(newFont);
-        addCropTextView.setTypeface(fontAwesome);
-        saveTextView.setTypeface(newFont);
         undoTextView.setTypeface(newFont);
         clearAllTextView.setTypeface(newFont);
         goToNextTextView.setTypeface(newFont);
@@ -228,12 +222,9 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
         });
 
         closeTextView.setOnClickListener(this);
-        addImageEmojiTextView.setOnClickListener(this);
-        addCropTextView.setOnClickListener(this);
         addTextView.setOnClickListener(this);
         addPencil.setOnClickListener(this);
         saveTextView.setOnClickListener(this);
-        saveTextTextView.setOnClickListener(this);
         undoTextView.setOnClickListener(this);
         undoTextTextView.setOnClickListener(this);
         doneDrawingTextView.setOnClickListener(this);
@@ -285,16 +276,6 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
             }
             if (hiddenControls.get(i).toString().equalsIgnoreCase("draw")) {
                 addPencil.setVisibility(View.INVISIBLE);
-            }
-            if (hiddenControls.get(i).toString().equalsIgnoreCase("save")) {
-                saveTextTextView.setVisibility(View.INVISIBLE);
-                saveTextView.setVisibility(View.INVISIBLE);
-            }
-            if (hiddenControls.get(i).toString().equalsIgnoreCase("sticker")) {
-                addImageEmojiTextView.setVisibility(View.INVISIBLE);
-            }
-            if (hiddenControls.get(i).toString().equalsIgnoreCase("crop")) {
-                addCropTextView.setVisibility(View.INVISIBLE);
             }
         }
     }

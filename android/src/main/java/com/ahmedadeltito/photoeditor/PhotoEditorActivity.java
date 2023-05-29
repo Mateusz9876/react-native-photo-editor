@@ -99,7 +99,6 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
 
     private ImageView photoEditImageView;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -107,7 +106,7 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
-        selectedImagePath = getIntent().getExtras().getString("selectedImagePath");	
+        selectedImagePath = getIntent().getExtras().getString("selectedImagePath");
         if (selectedImagePath.contains("content://")) {
             selectedImagePath = getPath(Uri.parse(selectedImagePath));
         }
@@ -128,7 +127,6 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
 
             e.printStackTrace();
         }
-
 
         Typeface newFont = getFontFromRes(R.raw.eventtusicons);
         Typeface fontAwesome = getFontFromRes(R.raw.font_awesome_solid);
@@ -201,8 +199,10 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
         photoEditorSDK = new PhotoEditorSDK.PhotoEditorSDKBuilder(PhotoEditorActivity.this)
                 .parentView(parentImageRelativeLayout) // add parent image view
                 .childView(photoEditImageView) // add the desired image view
-                .deleteView(deleteRelativeLayout) // add the deleted view that will appear during the movement of the views
-                .brushDrawingView(brushDrawingView) // add the brush drawing view that is responsible for drawing on the image view
+                .deleteView(deleteRelativeLayout) // add the deleted view that will appear during the movement of the
+                                                  // views
+                .brushDrawingView(brushDrawingView) // add the brush drawing view that is responsible for drawing on the
+                                                    // image view
                 .buildPhotoEditorSDK(); // build photo editor sdk
         photoEditorSDK.setOnPhotoEditorSDKListener(this);
 
@@ -242,7 +242,8 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
         clearAllTextTextView.setOnClickListener(this);
         goToNextTextView.setOnClickListener(this);
 
-        ArrayList<Integer> intentColors = (ArrayList<Integer>) getIntent().getExtras().getSerializable("colorPickerColors");
+        ArrayList<Integer> intentColors = (ArrayList<Integer>) getIntent().getExtras()
+                .getSerializable("colorPickerColors");
 
         colorPickerColors = new ArrayList<>();
         if (intentColors != null) {
@@ -262,7 +263,6 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
             colorPickerColors.add(getResources().getColor(R.color.yellow_green_color_picker));
         }
 
-
         new CountDownTimer(500, 100) {
 
             public void onTick(long millisUntilFinished) {
@@ -275,7 +275,7 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
         }.start();
 
         ArrayList hiddenControls = (ArrayList<Integer>) getIntent().getExtras().getSerializable("hiddenControls");
-        for (int i = 0;i < hiddenControls.size();i++) {
+        for (int i = 0; i < hiddenControls.size(); i++) {
             if (hiddenControls.get(i).toString().equalsIgnoreCase("text")) {
                 addTextView.setVisibility(View.INVISIBLE);
             }
@@ -342,8 +342,10 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
         View addTextPopupWindowRootView = inflater.inflate(R.layout.add_text_popup_window, null);
         final EditText addTextEditText = (EditText) addTextPopupWindowRootView.findViewById(R.id.add_text_edit_text);
         TextView addTextDoneTextView = (TextView) addTextPopupWindowRootView.findViewById(R.id.add_text_done_tv);
-        RecyclerView addTextColorPickerRecyclerView = (RecyclerView) addTextPopupWindowRootView.findViewById(R.id.add_text_color_picker_recycler_view);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(PhotoEditorActivity.this, LinearLayoutManager.HORIZONTAL, false);
+        RecyclerView addTextColorPickerRecyclerView = (RecyclerView) addTextPopupWindowRootView
+                .findViewById(R.id.add_text_color_picker_recycler_view);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(PhotoEditorActivity.this,
+                LinearLayoutManager.HORIZONTAL, false);
         addTextColorPickerRecyclerView.setLayoutManager(layoutManager);
         addTextColorPickerRecyclerView.setHasFixedSize(true);
         ColorPickerAdapter colorPickerAdapter = new ColorPickerAdapter(PhotoEditorActivity.this, colorPickerColors);
@@ -393,7 +395,8 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
             drawingViewColorPickerRecyclerView.setVisibility(View.VISIBLE);
             doneDrawingTextView.setVisibility(View.VISIBLE);
             eraseDrawingTextView.setVisibility(View.VISIBLE);
-            LinearLayoutManager layoutManager = new LinearLayoutManager(PhotoEditorActivity.this, LinearLayoutManager.HORIZONTAL, false);
+            LinearLayoutManager layoutManager = new LinearLayoutManager(PhotoEditorActivity.this,
+                    LinearLayoutManager.HORIZONTAL, false);
             drawingViewColorPickerRecyclerView.setLayoutManager(layoutManager);
             drawingViewColorPickerRecyclerView.setHasFixedSize(true);
             ColorPickerAdapter colorPickerAdapter = new ColorPickerAdapter(PhotoEditorActivity.this, colorPickerColors);
@@ -434,7 +437,9 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
 
                     if (isSDCARDMounted()) {
                         String folderName = "PhotoEditorSDK";
-                        File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), folderName);
+                        File mediaStorageDir = new File(
+                                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
+                                folderName);
                         if (!mediaStorageDir.exists() && !mediaStorageDir.mkdirs()) {
                             Log.d("PhotoEditorSDK", "Failed to create directory");
                         }
@@ -459,7 +464,8 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
 
                             try {
                                 ExifInterface exifDest = new ExifInterface(file.getAbsolutePath());
-                                exifDest.setAttribute(ExifInterface.TAG_ORIENTATION, Integer.toString(imageOrientation));
+                                exifDest.setAttribute(ExifInterface.TAG_ORIENTATION,
+                                        Integer.toString(imageOrientation));
                                 exifDest.saveAttributes();
                             } catch (IOException e) {
                                 e.printStackTrace();
@@ -479,7 +485,6 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
         }
     }
 
-
     private void returnBackWithUpdateImage() {
         updateView(View.GONE);
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
@@ -495,10 +500,10 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
                 String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
                 String imageName = "/IMG_" + timeStamp + ".jpg";
 
-                 String selectedImagePath = getIntent().getExtras().getString("selectedImagePath");
-                 File file = new File(selectedImagePath);
-//                String newPath = getCacheDir() + imageName;
-//	            File file = new File(newPath);
+                String selectedImagePath = getIntent().getExtras().getString("selectedImagePath");
+                File file = new File(selectedImagePath);
+                // String newPath = getCacheDir() + imageName;
+                // File file = new File(newPath);
 
                 try {
                     FileOutputStream out = new FileOutputStream(file);
@@ -543,21 +548,23 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 ActivityCompat.requestPermissions(PhotoEditorActivity.this,
-                        new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        new String[] { android.Manifest.permission.WRITE_EXTERNAL_STORAGE },
                         MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE_GALLERY);
             }
         });
         builder.setNegativeButton(getString(R.string.not_now), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText(PhotoEditorActivity.this, getString(R.string.media_access_denied_msg), Toast.LENGTH_SHORT).show();
+                Toast.makeText(PhotoEditorActivity.this, getString(R.string.media_access_denied_msg),
+                        Toast.LENGTH_SHORT).show();
             }
         });
         builder.show();
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+            @NonNull int[] grantResults) {
         if (requestCode == MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE_GALLERY) {
             // If request is cancelled, the result arrays are empty.
             int permissionCheck = PermissionChecker.checkCallingOrSelfPermission(this,
@@ -577,19 +584,12 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
     public void onClick(View v) {
         if (v.getId() == R.id.close_tv) {
             onBackPressed();
-        } else if (v.getId() == R.id.add_image_emoji_tv) {
-            mLayout.setPanelState(SlidingUpPanelLayout.PanelState.EXPANDED);
-        } else if(v.getId() == R.id.add_crop_tv) {
-            System.out.println("CROP IMAGE DUD");
-            startCropping();
         } else if (v.getId() == R.id.add_text_tv) {
             openAddTextPopupWindow("", -1);
         } else if (v.getId() == R.id.add_pencil_tv) {
             updateBrushDrawingView(true);
         } else if (v.getId() == R.id.done_drawing_tv) {
             updateBrushDrawingView(false);
-        } else if (v.getId() == R.id.save_tv || v.getId() == R.id.save_text_tv) {
-            returnBackWithSavedImage();
         } else if (v.getId() == R.id.clear_all_tv || v.getId() == R.id.clear_all_text_tv) {
             clearAllViews();
         } else if (v.getId() == R.id.undo_text_tv || v.getId() == R.id.undo_tv) {
@@ -695,26 +695,23 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
         }
     }
 
-    private Typeface getFontFromRes(int resource)
-    {
+    private Typeface getFontFromRes(int resource) {
         Typeface tf = null;
         InputStream is = null;
         try {
             is = getResources().openRawResource(resource);
-        }
-        catch(Resources.NotFoundException e) {
+        } catch (Resources.NotFoundException e) {
             Log.e(TAG, "Could not find font in resources!");
         }
 
         String outPath = getCacheDir() + "/tmp" + System.currentTimeMillis() + ".raw";
 
-        try
-        {
+        try {
             byte[] buffer = new byte[is.available()];
             BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(outPath));
 
             int l = 0;
-            while((l = is.read(buffer)) > 0)
+            while ((l = is.read(buffer)) > 0)
                 bos.write(buffer, 0, l);
 
             bos.close();
@@ -723,9 +720,7 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
 
             // clean up
             new File(outPath).delete();
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             Log.e(TAG, "Error reading in font!");
             return null;
         }
@@ -748,9 +743,8 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
         options.setAllowedGestures(
                 UCropActivity.ALL, // When 'scale'-tab active
                 UCropActivity.ALL, // When 'rotate'-tab active
-                UCropActivity.ALL  // When 'aspect ratio'-tab active
+                UCropActivity.ALL // When 'aspect ratio'-tab active
         );
-
 
         UCrop uCrop = UCrop
                 .of(uri, Uri.fromFile(new File(this.getTmpDir(this), UUID.randomUUID().toString() + ".jpg")))
@@ -758,7 +752,6 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
 
         uCrop.start(this);
     }
-
 
     private String getTmpDir(Activity activity) {
         String tmpDir = activity.getCacheDir() + "/react-native-photo-editor";
@@ -775,7 +768,7 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
                 if (resultUri != null) {
                     try {
                         selectedImagePath = resultUri.toString();
-                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver() , resultUri);
+                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), resultUri);
                         photoEditImageView.setImageBitmap(bitmap);
                     } catch (Exception ex) {
                         System.out.println("NO IMAGE DATA FOUND");
@@ -788,6 +781,7 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
             }
         }
     }
+
     @TargetApi(Build.VERSION_CODES.KITKAT)
     protected String getPath(final Uri uri) {
         // DocumentProvider
@@ -826,7 +820,7 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
                 }
 
                 final String selection = "_id=?";
-                final String[] selectionArgs = new String[]{split[1]};
+                final String[] selectionArgs = new String[] { split[1] };
 
                 return GalleryUtils.getDataColumn(this, contentUri, selection,
                         selectionArgs);

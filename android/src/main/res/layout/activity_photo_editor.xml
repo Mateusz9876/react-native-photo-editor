@@ -164,6 +164,26 @@
                     android:textSize="20sp" />
 
                 <TextView
+                    android:id="@+id/undo_text_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/add_text_tv"
+                    android:padding="15dp"
+                    android:text="@string/undo"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/clear_all_text_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/add_text_tv"
+                    android:padding="15dp"
+                    android:text="@string/clear_all"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+               <TextView
                     android:id="@+id/add_pencil_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -172,6 +192,7 @@
                     android:text="@string/ic_draw"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp" />
+
 
                 <TextView
                     android:visible="false"

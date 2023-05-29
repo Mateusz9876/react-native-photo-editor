@@ -136,12 +136,6 @@
                     android:textColor="#FFFFFF"
                     android:textSize="20sp" />
 
-                <TextView
-                    android:id="@+id/add_crop_tv"/>
-
-                <TextView
-                    android:id="@+id/add_image_emoji_tv" />
-
 
             </RelativeLayout>
 
@@ -161,11 +155,6 @@
                 android:paddingLeft="26dp"
                 android:paddingRight="26dp">
 
-                <TextView
-                    android:id="@+id/save_tv" />
-
-                <TextView
-                    android:id="@+id/save_text_tv"/>
 
                 <TextView
                     android:id="@+id/clear_all_tv"

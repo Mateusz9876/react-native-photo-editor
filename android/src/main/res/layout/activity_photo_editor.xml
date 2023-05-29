@@ -136,6 +136,28 @@
                     android:textColor="#FFFFFF"
                     android:textSize="20sp" />
 
+                <TextView
+                    android:visible="false"
+                    android:id="@+id/add_crop_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/add_pencil_tv"
+                    android:padding="15dp"
+                    android:text="@string/ic_crop"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:visible="false"
+                    android:id="@+id/add_image_emoji_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/add_crop_tv"
+                    android:padding="15dp"
+                    android:text="@string/ic_images"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
 
             </RelativeLayout>
 
@@ -155,6 +177,31 @@
                 android:paddingLeft="26dp"
                 android:paddingRight="26dp">
 
+                <TextView
+                    android:visible="false"
+                    android:id="@+id/save_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/save_text_tv"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:text="@string/ic_save"
+                    android:textColor="#FFFFFF"
+                    android:textSize="25sp" />
+
+                <TextView  
+                    android:visible="false"
+                    android:id="@+id/save_text_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/save_tv"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/save"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/clear_all_tv"
@@ -211,7 +258,7 @@
                     android:textColor="#FFFFFF"
                     android:textSize="15sp"
                     android:visibility="gone" />
-Z
+
                 <TextView
                     android:id="@+id/go_to_next_screen_tv"
                     android:layout_width="wrap_content"
@@ -259,6 +306,7 @@ Z
                 app:realtimeOverlayColor="#33ffffff" />
 
             <com.viewpagerindicator.CirclePageIndicator
+                android:visible="false"
                 android:id="@+id/image_emoji_indicator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

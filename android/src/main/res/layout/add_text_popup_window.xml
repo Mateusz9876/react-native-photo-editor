@@ -22,6 +22,7 @@
     <EditText
         android:id="@+id/add_text_edit_text"
         style="@style/EditText"
+        android:hint="Wpisz tutaj"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/add_text_color_picker_relative_layout"

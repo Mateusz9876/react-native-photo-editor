@@ -615,10 +615,6 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onAddViewListener(ViewType viewType, int numberOfAddedViews) {
-        if (numberOfAddedViews > 0) {
-            undoTextView.setVisibility(View.VISIBLE);
-            undoTextTextView.setVisibility(View.VISIBLE);
-        }
         switch (viewType) {
             case BRUSH_DRAWING:
                 Log.i("BRUSH_DRAWING", "onAddViewListener");

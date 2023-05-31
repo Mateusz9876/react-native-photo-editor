@@ -113,7 +113,7 @@
                     android:padding="15dp"
                     android:text="@string/ic_continue"
                     android:rotation="180"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#000000"
                     android:textSize="20sp" />
 
                 <TextView
@@ -123,7 +123,7 @@
                     android:layout_toStartOf="@+id/add_pencil_tv"
                     android:padding="15dp"
                     android:text="@string/ic_text"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#000000"
                     android:textSize="20sp" />
 
                 <TextView
@@ -133,7 +133,7 @@
                     android:layout_toStartOf="@+id/undo_tv"
                     android:padding="15dp"
                     android:text="@string/ic_draw"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#000000"
                     android:textSize="20sp" />
 
                 <TextView
@@ -144,7 +144,7 @@
                     android:layout_toStartOf="@+id/add_pencil_tv"
                     android:padding="15dp"
                     android:text="@string/ic_crop"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#000000"
                     android:textSize="20sp" />
 
                 <TextView
@@ -155,7 +155,7 @@
                     android:layout_toStartOf="@+id/add_crop_tv"
                     android:padding="15dp"
                     android:text="@string/ic_images"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#000000"
                     android:textSize="20sp" />
 
                 <TextView
@@ -165,7 +165,7 @@
                     android:layout_toStartOf="@+id/clear_all_tv"
                     android:padding="15dp"
                     android:text="@string/ic_clear_all"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#000000"
                     android:textSize="20sp"
                     android:visibility="gone" />
 
@@ -186,7 +186,7 @@
                     android:layout_alignParentEnd="true"
                     android:padding="15dp"
                     android:text="@string/ic_continue"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#000000"
                     android:textSize="20sp" />
 
 
@@ -197,7 +197,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_alignParentBottom="true"
-                android:background="@drawable/below_shadow" />
+                android:background="@drawable/fading_shadow" />
 
             <RelativeLayout
                 android:id="@+id/bottom_parent_rl"

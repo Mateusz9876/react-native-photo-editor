@@ -161,7 +161,7 @@
                     android:id="@+id/undo_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toStartOf="@+id/add_pencil_tv"
+                    android:layout_toStartOf="@+id/clear_all_tv"
                     android:padding="15dp"
                     android:text="@string/ic_clear_all"
                     android:textColor="#FFFFFF"
@@ -172,7 +172,7 @@
                     android:id="@+id/clear_all_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toStartOf="@+id/undo_tv"
+                    android:layout_toStartOf="@+id/go_to_next_screen_tv"
                     android:padding="15dp"
                     android:text="@string/ic_clear_all"
                     android:textColor="#FFFFFF"
@@ -220,7 +220,7 @@
                     android:layout_marginTop="4dp"
                     android:text="@string/clear_all"
                     android:textColor="#FFFFFF"
-                    android:textSize="15sp" />
+                    android:textSize="0sp" />
 
 
 
@@ -234,7 +234,7 @@
                     android:layout_marginTop="4dp"
                     android:text="@string/undo"
                     android:textColor="#FFFFFF"
-                    android:textSize="15sp"
+                    android:textSize="0sp"
                     android:visibility="gone" />                
                 
                 <TextView
@@ -247,7 +247,8 @@
                     android:gravity="center"
                     android:text="@string/ic_save"
                     android:textColor="#FFFFFF"
-                    android:textSize="25sp" />
+                    android:textSize="25sp"
+                    android:visibility="gone" />
 
                 <TextView
                     android:visible="false"

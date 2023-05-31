@@ -175,7 +175,7 @@
                     android:layout_height="wrap_content"
                     android:layout_toStartOf="@+id/go_to_next_screen_tv"
                     android:padding="15dp"
-                    android:text="@string/ic_clear_all"
+                    android:text="@string/ic_close"
                     android:textColor="#FFFFFF"
                     android:textSize="25sp" />
 

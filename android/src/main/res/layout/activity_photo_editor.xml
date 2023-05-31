@@ -119,7 +119,6 @@
                     android:id="@+id/add_text_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
                     android:layout_alignParentTop="true"
                     android:padding="15dp"
                     android:text="@string/ic_text"
@@ -162,7 +161,7 @@
                     android:id="@+id/undo_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/add_pencil_tv"
+                    android:layout_toStartOf="@+id/add_pencil_tv"
                     android:padding="15dp"
                     android:text="@string/ic_clear_all"
                     android:textColor="#FFFFFF"
@@ -173,7 +172,7 @@
                     android:id="@+id/clear_all_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignEnd="@+id/undo_tv"
+                    android:layout_toStartOf="@+id/undo_tv"
                     android:padding="15dp"
                     android:text="@string/ic_clear_all"
                     android:textColor="#FFFFFF"
@@ -184,11 +183,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
                     android:padding="15dp"
                     android:text="@string/ic_continue"
                     android:textColor="#FFFFFF"
-                    android:textSize="40sp" />
+                    android:textSize="25sp" />
 
 
             </RelativeLayout>

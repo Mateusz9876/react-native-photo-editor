@@ -166,7 +166,7 @@
                     android:padding="15dp"
                     android:text="@string/ic_clear_all"
                     android:textColor="#FFFFFF"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     android:visibility="gone" />
 
                 <TextView
@@ -187,7 +187,7 @@
                     android:padding="15dp"
                     android:text="@string/ic_continue"
                     android:textColor="#FFFFFF"
-                    android:textSize="25sp" />
+                    android:textSize="20sp" />
 
 
             </RelativeLayout>

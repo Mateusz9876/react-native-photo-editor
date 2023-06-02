@@ -100,9 +100,8 @@
             <RelativeLayout
                 android:id="@+id/top_parent_rl"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
                 android:gravity="center"
-                android:layout_alignParentBottom="true"
                 android:layout_alignBottom="@+id/top_shadow"
                 android:layout_alignTop="@+id/top_shadow"
                 android:paddingLeft="5dp"

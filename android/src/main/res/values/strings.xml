@@ -2,6 +2,7 @@
     <string name="app_name">PhotoEditor</string>
     <string name="title_activity_photo_editor">PhotoEditorActivity</string>
     <string name="done">Zatwierdź</string>
+    <string name="done_text">Zapisz</string>
     <string name="save">Zapisz</string>
     <string name="clear_all">Wyczyść</string>
     <string name="camera">Camera</string>

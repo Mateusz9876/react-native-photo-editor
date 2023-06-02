@@ -100,8 +100,8 @@
             <RelativeLayout
                 android:id="@+id/top_parent_rl"
                 android:layout_width="match_parent"
-                android:layout_height="fill_parent"
-                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
                 android:layout_alignBottom="@+id/top_shadow"
                 android:layout_alignTop="@+id/top_shadow"
                 android:paddingLeft="5dp"
@@ -142,7 +142,6 @@
                     android:id="@+id/add_crop_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
                     android:layout_toEndOf="@+id/add_pencil_tv"
                     android:layout_alignParentBottom="true"
                     android:textSize="0sp" />

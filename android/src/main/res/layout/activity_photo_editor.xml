@@ -103,7 +103,6 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/top_shadow"
                 android:layout_alignTop="@+id/top_shadow"
-                android:gravity="center_vertical"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp">
 

@@ -62,9 +62,9 @@ public class ColorPickerAdapter extends RecyclerView.Adapter<ColorPickerAdapter.
         smallerCircle.setIntrinsicHeight(5);
         smallerCircle.setIntrinsicWidth(5);
         smallerCircle.setBounds(new Rect(0, 0, 5, 5));
-        smallerCircle.getPaint().setColor(Color.WHITE);
+        smallerCircle.getPaint().setColor(Color.Black);
         smallerCircle.setPadding(10, 10, 10, 10);
-        Drawable[] drawables = {smallerCircle, biggerCircle};
+        Drawable[] drawables = { smallerCircle, biggerCircle };
 
         LayerDrawable layerDrawable = new LayerDrawable(drawables);
 
@@ -85,7 +85,8 @@ public class ColorPickerAdapter extends RecyclerView.Adapter<ColorPickerAdapter.
                 @Override
                 public void onClick(View v) {
                     if (onColorPickerClickListener != null)
-                        onColorPickerClickListener.onColorPickerClickListener(colorPickerColors.get(getAdapterPosition()));
+                        onColorPickerClickListener
+                                .onColorPickerClickListener(colorPickerColors.get(getAdapterPosition()));
                 }
             });
         }
